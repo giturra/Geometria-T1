@@ -1,4 +1,5 @@
 
+#include "Point.h"
 #include "Vector.h"
 
 template <class T>
@@ -26,6 +27,9 @@ void Vector<T>::setPoint(Point<T> *point) {
 
 template <class T>
 Vector<T> * Vector<T>::operator+(Vector<T> vector) {
+
+    Point<T> *point = vector.getPoint();
+
 
 }
 
