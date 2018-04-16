@@ -39,33 +39,36 @@ template <class T>
 Point<T>* Point<T>::operator+(Point<T> point) {
     T x = this->getX() + point.getX();
     T y = this->getY() + point.getY();
-    this->setX(x);
-    this->setY(y);
-    return new
+
+    Point<T> *newPoint = new Point<T>(x, y);
+    return newPoint;
 }
 
 template <class T>
 Point<T>* Point<T>::operator-(Point<T> point) {
-    T x = this->getX() + point.getX();
-    T y = this->getY() + point.getY();
-    this->setX(x);
-    this->setY(y);
+    T x = this->getX() - point.getX();
+    T y = this->getY() - point.getY();
+
+    Point<T> *newPoint = new Point<T>(x, y);
+    return newPoint;
 }
 
 template <class T>
 Point<T>* Point<T>::operator*(Point<T> point) {
     T x = this->getX() * point.getX();
     T y = this->getY() * point.getY();
-    this->setX(x);
-    this->setY(y);
+
+    Point<T> *newPoint = new Point<T>(x, y);
+    return newPoint;
 }
 
 template <class T>
 Point<T>* Point<T>::operator/(Point<T> point) {
     T x = this->getX() / point.getX();
     T y = this->getY() / point.getY();
-    this->setX(x);
-    this->setY(y);
+
+    Point<T> *newPoint = new Point<T>(x, y);
+    return newPoint;
 }
 
 template class Point<int>;
