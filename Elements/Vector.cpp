@@ -4,13 +4,13 @@
 
 template <class T>
 Vector<T>::Vector() {
-    this->point = new Point<T>(0,0);
+    this->point = new Point<T>(0, 0, 0);
 }
 
 template <class T>
-Vector<T>::Vector(T x, T y) {
+Vector<T>::Vector(T x, T y, T z) {
 
-this->point = new Point<T>(x, y);
+this->point = new Point<T>(x, y, z);
 
 }
 

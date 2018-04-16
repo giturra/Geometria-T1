@@ -8,7 +8,7 @@ template <class T>
 class Vector {
     public:
     Vector();
-    Vector(T x, T y);
+    Vector(T x, T y, T z);
     ~Vector();
 
     Point<T> * getPoint();
