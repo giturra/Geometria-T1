@@ -26,9 +26,15 @@ void Vector<T>::setPoint(Point<T> *point) {
 }
 
 template <class T>
-Vector<T> * Vector<T>::operator+(Vector<T> vector) {
+Vector<T>* Vector<T>::operator+(Vector<T> vector) {
 
     Point<T> *point = vector.getPoint();
+
+    T x = this->getPoint()->getX() + point->getX();
+    T y = this->getPoint()->getY() + point->getY();
+
+    Vector<T>* newVector = new Vector(x, y);
+    return newVector;
 
 
 }
@@ -36,10 +42,21 @@ Vector<T> * Vector<T>::operator+(Vector<T> vector) {
 template <class T>
 Vector<T> * Vector<T>::operator*(Vector<T> vector) {
 
+    Point<T> *point = vector.getPoint();
+
+    T x = this->getPoint()->getX() * point->getX();
+    T y = this->getPoint()->getY() * point->getY();
+
+    Vector<T>* newVector = new Vector(x, y);
+    return newVector;
+
 }
 
 template <class T>
 Vector<T> * Vector<T>::operator^(Vector<T> vector) {
+
+    Point<T> *point = vector.getPoint();
+
 
 }
 

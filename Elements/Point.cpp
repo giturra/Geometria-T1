@@ -5,9 +5,10 @@
 #include "Point.h"
 
 template <class T>
-Point<T>::Point(T x, T y) {
+Point<T>::Point(T x, T y, T Z) {
     this->x = x;
     this->y = y;
+    this->z = z;
 }
 
 template <class T>
@@ -26,6 +27,11 @@ void Point<T>::setY(T y) {
 }
 
 template <class T>
+void Point<T>::setZ(T z) {
+    this->z = z;
+}
+
+template <class T>
 T Point<T>::getX() {
     return this->x;
 }
@@ -36,11 +42,17 @@ T Point<T>::getY() {
 }
 
 template <class T>
+T Point<T>::getZ() {
+    return this->z;
+}
+
+template <class T>
 Point<T>* Point<T>::operator+(Point<T> point) {
     T x = this->getX() + point.getX();
     T y = this->getY() + point.getY();
+    T z = this->getZ() + point.getZ();
 
-    Point<T> *newPoint = new Point<T>(x, y);
+    Point<T> *newPoint = new Point<T>(x, y, z);
     return newPoint;
 }
 
@@ -48,8 +60,9 @@ template <class T>
 Point<T>* Point<T>::operator-(Point<T> point) {
     T x = this->getX() - point.getX();
     T y = this->getY() - point.getY();
+    T z = this->getZ() - point.getZ();
 
-    Point<T> *newPoint = new Point<T>(x, y);
+    Point<T> *newPoint = new Point<T>(x, y, z);
     return newPoint;
 }
 
@@ -57,8 +70,9 @@ template <class T>
 Point<T>* Point<T>::operator*(Point<T> point) {
     T x = this->getX() * point.getX();
     T y = this->getY() * point.getY();
+    T z = this->getZ() * point.getZ();
 
-    Point<T> *newPoint = new Point<T>(x, y);
+    Point<T> *newPoint = new Point<T>(x, y, z);
     return newPoint;
 }
 
@@ -66,8 +80,9 @@ template <class T>
 Point<T>* Point<T>::operator/(Point<T> point) {
     T x = this->getX() / point.getX();
     T y = this->getY() / point.getY();
+    T z = this->getZ() / point.getZ();
 
-    Point<T> *newPoint = new Point<T>(x, y);
+    Point<T> *newPoint = new Point<T>(x, y, z);
     return newPoint;
 }
 

@@ -11,16 +11,19 @@ class Point {
     private:
         T x = 0;
         T y = 0;
+        T z = 0;
 
     public:
-        Point(T x, T y);
+        Point(T x, T y, T z);
         ~Point();
 
         void setX(T x);
         void setY(T y);
+        void setZ(T z);
 
         T getX();
         T getY();
+        T getZ();
 
         Point<T> *operator+(Point<T> point);
         Point<T> *operator-(Point<T> point);
