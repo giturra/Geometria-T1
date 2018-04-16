@@ -18,6 +18,8 @@ class Vector {
     Vector<T> *operator*(Vector<T> vector);
     Vector<T> *operator^(Vector<T> vector);
 
+
+
     private:
         Point<T> * point;
 };

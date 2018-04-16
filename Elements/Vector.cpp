@@ -32,8 +32,9 @@ Vector<T>* Vector<T>::operator+(Vector<T> vector) {
 
     T x = this->getPoint()->getX() + point->getX();
     T y = this->getPoint()->getY() + point->getY();
+    T z = this->getPoint()->getZ() + point->getZ();
 
-    Vector<T>* newVector = new Vector(x, y);
+    Vector<T>* newVector = new Vector(x, y, z);
     return newVector;
 
 
@@ -46,6 +47,7 @@ Vector<T> * Vector<T>::operator*(Vector<T> vector) {
 
     T x = this->getPoint()->getX() * point->getX();
     T y = this->getPoint()->getY() * point->getY();
+    T z = this->getPoint()->getZ() * point->getZ();
 
     Vector<T>* newVector = new Vector(x, y);
     return newVector;
@@ -56,6 +58,15 @@ template <class T>
 Vector<T> * Vector<T>::operator^(Vector<T> vector) {
 
     Point<T> *point = vector.getPoint();
+
+    T x = (this->point->getY() * point->getZ()) - (this->point->getZ() - point->getY());
+    T y = (this->point->getZ() * point->getX()) - (this->point->getX() - point->getZ());
+    T z = (this->point->getX() * point->getY()) - (this->point->getY() - point->getX());
+
+
+    Vector<T>* newVector = new Vector(x, y);
+    return newVector;
+
 
 
 }
