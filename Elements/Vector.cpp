@@ -80,3 +80,6 @@ void Vector<T>::normalizedVector() {
 }
 
 
+template class Point<int>;
+template class Point<double>;
+template class Point<float>;

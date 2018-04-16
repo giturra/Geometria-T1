@@ -5,6 +5,9 @@ using namespace std;
 
 int main() {
 
-    cout << "Hello Gabo" << endl;
+
+    int x = 10;
+    x *= x;
+    cout << x << endl;
     return 0;
 }
