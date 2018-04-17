@@ -1,7 +1,10 @@
 
+#include <iostream>
 #include <cmath>
 #include "Point.h"
 #include "Vector.h"
+
+using namespace std;
 
 template <class T>
 Vector<T>::Vector() {
@@ -13,6 +16,11 @@ Vector<T>::Vector(T x, T y, T z) {
 
 this->point = new Point<T>(x, y, z);
 
+}
+
+template <class T>
+Vector<T>::~Vector() {
+    delete this->point;
 }
 
 template <class T>
@@ -45,7 +53,7 @@ Vector<T> * Vector<T>::operator*(Vector<T> vector) {
     T x = this->getPoint()->getX() * point->getX();
     T y = this->getPoint()->getY() * point->getY();
     T z = this->getPoint()->getZ() * point->getZ();
-    Vector<T>* newVector = new Vector(x, y);
+    Vector<T>* newVector = new Vector(x, y, z);
     return newVector;
 
 }
@@ -56,7 +64,7 @@ Vector<T> * Vector<T>::operator^(Vector<T> vector) {
     T x = (this->point->getY() * point->getZ()) - (this->point->getZ() - point->getY());
     T y = (this->point->getZ() * point->getX()) - (this->point->getX() - point->getZ());
     T z = (this->point->getX() * point->getY()) - (this->point->getY() - point->getX());
-    Vector<T>* newVector = new Vector(x, y);
+    Vector<T>* newVector = new Vector(x, y, z);
     return newVector;
 }
 
@@ -75,11 +83,17 @@ void Vector<T>::normalizedVector() {
     T x = this->point->getX() / norm;
     T y = this->point->getY() / norm;
     T z = this->point->getZ() / norm;
-    Point<T> *point = new Point(x, y, z);
+    Point<T> *point = new Point<T>(x, y, z);
     this->setPoint(point);
 }
 
+template <class T>
+void Vector<T>::localize() {
+    cout << "I'm a vector, and the my point will be my presentation" << endl;
+    this->point->localize();
+}
 
-template class Point<int>;
-template class Point<double>;
-template class Point<float>;
+
+template class Vector<int>;
+template class Vector<double>;
+template class Vector<float>;

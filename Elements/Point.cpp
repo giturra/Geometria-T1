@@ -2,7 +2,11 @@
 // Created by giturrab on 01-04-18.
 //
 
+#include <iostream>
+#include <typeinfo>
 #include "Point.h"
+
+using namespace std;
 
 template <class T>
 Point<T>::Point(T x, T y, T Z) {
@@ -84,6 +88,12 @@ Point<T>* Point<T>::operator/(Point<T> point) {
 
     Point<T> *newPoint = new Point<T>(x, y, z);
     return newPoint;
+}
+
+template <class T>
+void Point<T>::localize() {
+    cout << "I'am at (" << this->getX() << ", " << this->getY() << ", " << this->getZ() << ")" << " and my type is " <<
+                                                                                                          typeid(this->getX()).name() << endl;
 }
 
 template class Point<int>;

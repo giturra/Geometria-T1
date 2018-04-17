@@ -1,13 +1,15 @@
 #include <iostream>
 #include "Elements/Point.h"
+#include "Elements/Vector.h"
 
 using namespace std;
 
 int main() {
 
+    Point<int> *point = new Point<int>(1,2,3);
+    point->localize();
 
-    int x = 10;
-    x *= x;
-    cout << x << endl;
-    return 0;
+    Vector<int> *vector = new Vector<int>(1,2,3);
+    vector->localize();
+
 }

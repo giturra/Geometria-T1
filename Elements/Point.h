@@ -6,7 +6,6 @@
 #define TAREA1_POINT_H
 
 template <class T>
-
 class Point {
     private:
         T x = 0;
@@ -29,5 +28,7 @@ class Point {
         Point<T> *operator-(Point<T> point);
         Point<T> *operator*(Point<T> point);
         Point<T> *operator/(Point<T> point);
+
+        void localize();
 };
 #endif //TAREA1_POINT_H

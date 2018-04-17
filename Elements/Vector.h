@@ -19,8 +19,10 @@ class Vector {
     Vector<T> *operator^(Vector<T> vector);
 
     T norm();
-
     void normalizedVector();
+
+    void localize();
+
 
     private:
         Point<T> * point;
