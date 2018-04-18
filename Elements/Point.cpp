@@ -9,7 +9,14 @@
 using namespace std;
 
 template <class T>
-Point<T>::Point(T x, T y, T Z) {
+Point<T>::Point() {
+    this->x = 0;
+    this->y = 0;
+    this->z = 0;
+}
+
+template <class T>
+Point<T>::Point(T x, T y, T z) {
     this->x = x;
     this->y = y;
     this->z = z;

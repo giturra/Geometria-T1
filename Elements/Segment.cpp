@@ -6,6 +6,12 @@
 using namespace std;
 
 template <class T>
+Segment<T>::Segment() {
+    this->point1 = new Point<T>();
+    this->point2 = new Point<T>();
+}
+
+template <class T>
 Segment<T>::Segment(Point<T> *point1, Point<T> *point2) {
     this->point1 = point1;
     this->point2 = point2;
@@ -13,12 +19,12 @@ Segment<T>::Segment(Point<T> *point1, Point<T> *point2) {
 
 template <class T>
 Point<T>* Segment<T>::getPoint1() {
-    this->point1;
+    return this->point1;
 }
 
 template <class T>
 Point<T>* Segment<T>::getPoint2() {
-    this->point2;
+    return this->point2;
 }
 
 template <class T>
@@ -113,6 +119,6 @@ T Segment<T>::length() {
     return result;
 }
 
-template class Vector<int>;
-template class Vector<double>;
-template class Vector<float>;
+template class Segment<int>;
+template class Segment<double>;
+template class Segment<float>;

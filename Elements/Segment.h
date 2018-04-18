@@ -11,6 +11,7 @@ template <class T>
 class Segment {
 
     public:
+        Segment();
         Segment(Point<T> *point1, Point<T> *point2);
 
         Point<T>* getPoint1();

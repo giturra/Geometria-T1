@@ -8,11 +8,12 @@
 template <class T>
 class Point {
     private:
-        T x = 0;
-        T y = 0;
-        T z = 0;
+        T x;
+        T y;
+        T z;
 
     public:
+        Point();
         Point(T x, T y, T z);
         ~Point();
 
